@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CodeBlock, dracula } from "react-code-blocks";
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const APIReference = () => {
   const curlSample = `curl -X POST 'https://api.nexuspay.cloud/payin/process' \\
@@ -46,12 +47,9 @@ const APIReference = () => {
         <TabsContent value="authentication">
           <h2 className="text-2xl font-bold mb-2">Authentication</h2>
           <p>To authenticate your requests, include the following header with your API key:</p>
-          <CodeBlock
-            text={`Authorization: Bearer YOUR_API_KEY`}
-            language="bash"
-            showLineNumbers={false}
-            theme={dracula}
-          />
+          <SyntaxHighlighter language="bash" style={dracula}>
+            {`Authorization: Bearer YOUR_API_KEY`}
+          </SyntaxHighlighter>
         </TabsContent>
         <TabsContent value="endpoints">
           <h2 className="text-2xl font-bold mb-2">Endpoints</h2>
@@ -66,29 +64,20 @@ const APIReference = () => {
         <TabsContent value="examples">
           <h2 className="text-2xl font-bold mb-2">Request and Response Examples</h2>
           <h3 className="text-xl font-semibold mb-1">cURL Request</h3>
-          <CodeBlock
-            text={curlSample}
-            language="bash"
-            showLineNumbers={false}
-            theme={dracula}
-          />
+          <SyntaxHighlighter language="bash" style={dracula}>
+            {curlSample}
+          </SyntaxHighlighter>
           <h3 className="text-xl font-semibold mb-1">Successful Response</h3>
-          <CodeBlock
-            text={responseSample}
-            language="json"
-            showLineNumbers={false}
-            theme={dracula}
-          />
+          <SyntaxHighlighter language="json" style={dracula}>
+            {responseSample}
+          </SyntaxHighlighter>
         </TabsContent>
         <TabsContent value="errors">
           <h2 className="text-2xl font-bold mb-2">Error Handling</h2>
           <p>Below is an example of an error response:</p>
-          <CodeBlock
-            text={errorSample}
-            language="json"
-            showLineNumbers={false}
-            theme={dracula}
-          />
+          <SyntaxHighlighter language="json" style={dracula}>
+            {errorSample}
+          </SyntaxHighlighter>
         </TabsContent>
       </Tabs>
     </div>
