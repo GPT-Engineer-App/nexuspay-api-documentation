@@ -12,7 +12,8 @@ import { cn } from "@/lib/utils";
 import { CircleUser, Menu, BookOpen, Code, HelpCircle } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
-import logo from '../../public/images/logo.png';
+
+const logoUrl = "https://marcroland84.wordpress.com/wp-content/uploads/2024/07/img_7181-1.png?w=510";
 
 const Layout = () => {
   return (
@@ -47,7 +48,7 @@ const DesktopNav = () => (
       to="/"
       className="flex items-center gap-2 text-lg font-semibold md:text-base"
     >
-      <img src={logo} alt="NexusPay Logo" className="h-8 w-8" />
+      <img src={logoUrl} alt="NexusPay Logo" className="h-8 w-8" />
       <span className="sr-only">NexusPay Docs</span>
     </NavItem>
     {navItems.map((item) => (
@@ -72,7 +73,7 @@ const MobileNav = () => (
           to="/"
           className="flex items-center gap-2 text-lg font-semibold"
         >
-          <img src={logo} alt="NexusPay Logo" className="h-8 w-8" />
+          <img src={logoUrl} alt="NexusPay Logo" className="h-8 w-8" />
           <span className="sr-only">NexusPay Docs</span>
         </NavItem>
         {navItems.map((item) => (
