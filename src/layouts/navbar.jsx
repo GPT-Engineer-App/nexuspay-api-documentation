@@ -8,11 +8,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { CircleUser } from "lucide-react";
+import { CircleUser, Menu } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
-const logoUrl = "https://marcroland84.wordpress.com/wp-content/uploads/2024/07/img_7181-1.png?w=510";
+const logoUrl = "https://example.com/new-logo.png";
 
 const Layout = () => {
   return (
@@ -20,6 +20,7 @@ const Layout = () => {
       <Sidebar />
       <div className="flex flex-col flex-grow">
         <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 justify-between">
+          <MobileSidebar />
           <UserMenu />
         </header>
         <main className="flex-grow p-4 overflow-auto">
@@ -46,7 +47,7 @@ const Sidebar = () => (
   <div className="hidden md:flex md:flex-col md:w-64 md:border-r bg-muted/40">
     <div className="flex h-16 items-center border-b px-4">
       <NavLink to="/" className="flex items-center gap-2 font-semibold">
-        <img src={logoUrl} alt="NexusPay Logo" className="h-8 w-8" />
+        <img src={logoUrl} alt="NexusPay Logo" className="h-8 w-8 md:h-8 md:w-8" />
         <span>NexusPay</span>
       </NavLink>
     </div>
