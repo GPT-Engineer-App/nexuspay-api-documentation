@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import MobileSidebar from "@/components/ui/mobile-sidebar";
 import {
   DropdownMenu,
   DropdownMenuContent,
