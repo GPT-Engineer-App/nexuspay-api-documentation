@@ -39,6 +39,7 @@ const Layout = () => {
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
+          <div className="text-xl font-bold">NexusPay</div>
           <UserMenu />
         </header>
         <main className="flex-grow p-4 overflow-auto">
