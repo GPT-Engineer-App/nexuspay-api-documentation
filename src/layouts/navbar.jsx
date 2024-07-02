@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 import { CircleUser, Menu, BookOpen, Code, HelpCircle } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
+import logo from '../../public/images/logo.png';
 
 const Layout = () => {
   return (
@@ -46,7 +47,7 @@ const DesktopNav = () => (
       to="/"
       className="flex items-center gap-2 text-lg font-semibold md:text-base"
     >
-      <BookOpen className="h-6 w-6" />
+      <img src={logo} alt="NexusPay Logo" className="h-8 w-8" />
       <span className="sr-only">NexusPay Docs</span>
     </NavItem>
     {navItems.map((item) => (
@@ -71,7 +72,7 @@ const MobileNav = () => (
           to="/"
           className="flex items-center gap-2 text-lg font-semibold"
         >
-          <BookOpen className="h-6 w-6" />
+          <img src={logo} alt="NexusPay Logo" className="h-8 w-8" />
           <span className="sr-only">NexusPay Docs</span>
         </NavItem>
         {navItems.map((item) => (
