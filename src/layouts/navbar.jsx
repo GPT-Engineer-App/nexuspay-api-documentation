@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 import { CircleUser, Menu, BookOpen, Code, HelpCircle } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
-import logo from '../../public/images/logo.png';
+import logo from '@/public/images/logo.png';
 
 const Layout = () => {
   return (
