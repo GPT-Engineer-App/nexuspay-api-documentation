@@ -66,7 +66,6 @@ const Sidebar = () => (
     <div className="flex h-16 items-center border-b px-4">
       <NavLink to="/" className="flex items-center gap-2 font-semibold">
         <img src={logoUrl} alt="NexusPay Logo" className="h-auto w-full" />
-        <span>NexusPay</span>
       </NavLink>
     </div>
     <nav className="flex-1 p-4">
