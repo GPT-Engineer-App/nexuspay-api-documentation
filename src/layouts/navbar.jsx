@@ -35,7 +35,7 @@ const DesktopNav = () => (
       className="flex items-center gap-2 text-lg font-semibold md:text-base"
     >
       <BookOpen className="h-6 w-6" />
-      <span className="sr-only">Docs Site</span>
+      <span className="sr-only">NexusPay Docs</span>
     </NavItem>
     {navItems.map((item) => (
       <NavItem key={item.to} to={item.to}>
@@ -60,7 +60,7 @@ const MobileNav = () => (
           className="flex items-center gap-2 text-lg font-semibold"
         >
           <BookOpen className="h-6 w-6" />
-          <span className="sr-only">Docs Site</span>
+          <span className="sr-only">NexusPay Docs</span>
         </NavItem>
         {navItems.map((item) => (
           <NavItem key={item.to} to={item.to}>
