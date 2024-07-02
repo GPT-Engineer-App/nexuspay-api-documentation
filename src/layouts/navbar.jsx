@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,6 +11,7 @@ import { cn } from "@/lib/utils";
 import { HelpCircle, Menu } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
+import { useState } from "react";
 
 const logoUrl = "https://marcroland84.wordpress.com/wp-content/uploads/2024/07/img_7181-1.png?w=510";
 
@@ -65,7 +65,7 @@ const Sidebar = () => (
   <div className="hidden md:flex md:flex-col md:w-64 md:border-r bg-muted/40">
     <div className="flex h-16 items-center border-b px-4">
       <NavLink to="/" className="flex items-center gap-2 font-semibold">
-        <img src={logoUrl} alt="NexusPay Logo" className="h-8 w-8" />
+        <img src={logoUrl} alt="NexusPay Logo" className="h-auto w-full" />
         <span>NexusPay</span>
       </NavLink>
     </div>
@@ -80,12 +80,37 @@ const Sidebar = () => (
   </div>
 );
 
-const UserMenu = () => (
-  <Button variant="secondary" size="icon" className="rounded-full" onClick={() => alert('Nexuspay Support agent pop-up')}>
-    <HelpCircle className="h-full w-full" />
-    <span className="sr-only">Toggle help menu</span>
-  </Button>
-);
+const UserMenu = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
+
+  const toggleChat = () => {
+    setIsChatOpen(!isChatOpen);
+  };
+
+  return (
+    <>
+      <Button variant="secondary" size="icon" className="rounded-full" onClick={toggleChat}>
+        <HelpCircle className="h-full w-full" />
+        <span className="sr-only">Toggle help menu</span>
+      </Button>
+      {isChatOpen && (
+        <div className="fixed bottom-16 right-4 w-80 h-96 bg-white border border-gray-300 shadow-lg rounded-lg">
+          <div className="flex justify-between items-center p-4 border-b">
+            <h2 className="text-lg font-semibold">NexusPay Chatbot</h2>
+            <Button variant="ghost" size="icon" onClick={toggleChat}>
+              <span className="sr-only">Close chat</span>
+              &times;
+            </Button>
+          </div>
+          <div className="p-4 overflow-y-auto">
+            <p>Welcome to NexusPay! How can I assist you today?</p>
+            {/* Chat content will go here */}
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 const NavItem = ({ to, children }) => (
   <NavLink
