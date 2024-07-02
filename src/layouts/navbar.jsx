@@ -24,6 +24,18 @@ const Layout = () => {
       <main className="flex-grow p-4 overflow-auto">
         <Outlet />
       </main>
+      <footer className="sticky bottom-0 flex h-16 items-center gap-4 border-t bg-background px-4 md:px-6 justify-between">
+        <div className="flex flex-col">
+          <span>&copy; 2024 NexusPay</span>
+          <span>Email: info@nexuspay.com</span>
+          <span>Website: www.nexuspay.com</span>
+        </div>
+        <nav className="flex gap-4">
+          <NavLink to="/privacy-policy" className="text-muted-foreground hover:text-foreground">Privacy Policy</NavLink>
+          <NavLink to="/terms-of-service" className="text-muted-foreground hover:text-foreground">Terms of Service</NavLink>
+          <NavLink to="/contact-us" className="text-muted-foreground hover:text-foreground">Contact Us</NavLink>
+        </nav>
+      </footer>
     </div>
   );
 };
