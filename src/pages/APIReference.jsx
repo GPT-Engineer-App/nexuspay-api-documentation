@@ -20,12 +20,17 @@ const APIReference = () => {
 
   const responseSample = `{
     "status": "success",
-    "transaction_id": "1234567890",
+    "transaction_id": "abc123",
     "amount": "100",
     "currency": "PHP",
     "pay_method": "sp-qrph",
     "remarks": "remarks payin",
-    "created_at": "2023-10-01T12:34:56Z"
+    "created_at": "2023-10-01T12:34:56Z",
+    "name": "gerald",
+    "email": "marcSmith@yahoo.com",
+    "mobilenumber": "0909333322",
+    "address": "Manila ph",
+    "webhook": "https://api.nexuspay.cloud/payin/payinwebhook.php"
   }`;
 
   const errorSample = `{
