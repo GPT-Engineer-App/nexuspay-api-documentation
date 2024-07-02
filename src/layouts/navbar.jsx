@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -8,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { CircleUser } from "lucide-react";
+import { CircleUser, Menu } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
 import { navItems } from "../App";
 
@@ -20,6 +21,24 @@ const Layout = () => {
       <Sidebar />
       <div className="flex flex-col flex-grow">
         <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 justify-between">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon" className="md:hidden">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle navigation menu</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              {navItems.map((item) => (
+                <DropdownMenuItem key={item.to} asChild>
+                  <NavLink to={item.to} className="flex items-center gap-2">
+                    {item.icon}
+                    {item.title}
+                  </NavLink>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
           <UserMenu />
         </header>
         <main className="flex-grow p-4 overflow-auto">
