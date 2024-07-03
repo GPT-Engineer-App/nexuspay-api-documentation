@@ -1,7 +1,13 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const APIReference = () => {
+  useEffect(() => {
+    console.log("APIReference component mounted");
+    return () => {
+      console.log("APIReference component unmounted");
+    };
+  }, []);
+
   return (
     <div className="api-reference">
       <h1>API Reference</h1>
@@ -36,25 +42,25 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
         <p>Headers:</p>
         <pre>
           <code>
-            {{
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
-            }}
+            {`{
+  'Content-Type': 'application/json',
+  'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
+}`}
           </code>
         </pre>
         <p>Body Parameters:</p>
         <pre>
           <code>
-            {{
-              "name": "gerald",
-              "email": "marcSmith@yahoo.com",
-              "amount": "100",
-              "pay_method": "sp-qrph",
-              "mobilenumber": "0909333322",
-              "address": "Manila ph",
-              "webhook": "https://api.nexuspay.cloud/hook/icore.php",
-              "remarks": "remarks"
-            }}
+            {`{
+  "name": "gerald",
+  "email": "marcSmith@yahoo.com",
+  "amount": "100",
+  "pay_method": "sp-qrph",
+  "mobilenumber": "0909333322",
+  "address": "Manila ph",
+  "webhook": "https://api.nexuspay.cloud/hook/icore.php",
+  "remarks": "remarks"
+}`}
           </code>
         </pre>
       </section>
@@ -102,7 +108,7 @@ def make_request(url, payload, headers, method="POST"):
 
 # Example API call
 url = "https://api.nexuspay.cloud/payin/process"
-payload = json.dumps({{
+payload = json.dumps({
   "name": "gerald",
   "email": "marcSmith@yahoo.com",
   "amount": "100.00",
@@ -111,11 +117,11 @@ payload = json.dumps({{
   "address": "Manila ph",
   "webhook": "https://api.nexuspay.cloud/hook/icore.php",
   "remarks": "remarks"
-}})
-headers = {{
+})
+headers = {
   'Authorization': token,
   'Content-Type': 'application/json'
-}}
+}
 
 make_request(url, payload, headers)
 `}
@@ -151,54 +157,54 @@ make_request(url, payload, headers)
           <li><strong>fail</strong>: Payment has been tag failed by provider</li>
         </ul>
       </section>
+
+      <section id="payout-api">
+        <h2>Payout API</h2>
+        <h3>Endpoint</h3>
+        <p>Endpoint: <code>https://api.nexuspay.cloud/payout/payout</code></p>
+        <p>Method: POST</p>
+        <p>Headers:</p>
+        <pre>
+          <code>
+            {`{
+  'Content-Type': 'text/plain',
+  'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
+}`}
+          </code>
+        </pre>
+        <p>Body Parameters:</p>
+        <pre>
+          <code>
+            {`{
+  "name": "mark pogi hook2 v2",
+  "email": "marcSmith@yahoo.com",
+  "amount": "100",
+  "mobilenumber": "09058086521",
+  "address": "Manila ph",
+  "bank_account": "09058086521",
+  "pay_method": "allbank_payout_g_exchange",
+  "remarks": "cash out"
+}`}
+          </code>
+        </pre>
+        <h3>Example CURL Command</h3>
+        <pre>
+          <code>
+            {`curl -X POST 'https://api.nexuspay.cloud/payout/payout' -H 'Content-Type:text/plain' -H 'Authorization:Bearer YOUR_GENERATED_TOKEN' -d '{
+  "name": "mark pogi hook2 v2",
+  "email": "marcSmith@yahoo.com",
+  "amount": "100",
+  "mobilenumber": "09058086521",
+  "address": "Manila ph",
+  "bank_account": "09058086521",
+  "pay_method": "allbank_payout_g_exchange",
+  "remarks": "cash out"
+}'`}
+          </code>
+        </pre>
+      </section>
     </div>
   );
 };
 
 export default APIReference;
-
-<section id="payout-api">
-  <h2>Payout API</h2>
-  <h3>Endpoint</h3>
-  <p>Endpoint: <code>https://api.nexuspay.cloud/payout/payout</code></p>
-  <p>Method: POST</p>
-  <p>Headers:</p>
-  <pre>
-    <code>
-      {{
-        'Content-Type': 'text/plain',
-        'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
-      }}
-    </code>
-  </pre>
-  <p>Body Parameters:</p>
-  <pre>
-    <code>
-      {{
-        "name": "mark pogi hook2 v2",
-        "email": "marcSmith@yahoo.com",
-        "amount": "100",
-        "mobilenumber": "09058086521",
-        "address": "Manila ph",
-        "bank_account": "09058086521",
-        "pay_method": "allbank_payout_g_exchange",
-        "remarks": "cash out"
-      }}
-    </code>
-  </pre>
-  <h3>Example CURL Command</h3>
-  <pre>
-    <code>
-      {`curl -X POST 'https://api.nexuspay.cloud/payout/payout' -H 'Content-Type:text/plain' -H 'Authorization:Bearer YOUR_GENERATED_TOKEN' -d '{
-        "name": "mark pogi hook2 v2",
-        "email": "marcSmith@yahoo.com",
-        "amount": "100",
-        "mobilenumber": "09058086521",
-        "address": "Manila ph",
-        "bank_account": "09058086521",
-        "pay_method": "allbank_payout_g_exchange",
-        "remarks": "cash out"
-      }'`}
-    </code>
-  </pre>
-</section>
