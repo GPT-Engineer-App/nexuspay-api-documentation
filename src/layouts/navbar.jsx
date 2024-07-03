@@ -48,8 +48,7 @@ const Layout = () => {
         <footer className="sticky bottom-0 flex h-16 items-center gap-4 border-t bg-background px-4 md:px-6 justify-between">
           <div className="flex flex-col">
             <span>&copy; 2024 NexusPay</span>
-            <span>Email: info@nexuspay.com</span>
-            <span>Website: www.nexuspay.com</span>
+            <span>Website: <a href="https://www.nexuscoretechnologies.com/" target="_blank" rel="noopener noreferrer">www.nexuscoretechnologies.com</a></span>
           </div>
           <nav className="flex gap-4">
             <NavLink to="/privacy-policy" className="text-muted-foreground hover:text-foreground">Privacy Policy</NavLink>
