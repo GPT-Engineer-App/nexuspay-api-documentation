@@ -12,12 +12,12 @@ const APIReference = () => {
 
   return (
     <div className="api-reference">
-      <h1>API Reference</h1>
+      <h1 style={{ fontSize: '2.5em', fontWeight: 'bold' }}>API Reference</h1>
 
-      <section id="authentication">
-        <h2>Authentication</h2>
+      <section id="authentication" style={{ marginBottom: '2em' }}>
+        <h2 style={{ fontSize: '2em', fontWeight: 'bold' }}>Authentication</h2>
         <p>To authenticate your API requests, you will need to generate a Bearer token using your account code and client key. The token should be included in the Authorization header of your requests.</p>
-        <SyntaxHighlighter language="python" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
+        <SyntaxHighlighter language="python" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2", padding: '1em' }}>
           {`import base64
 
 def generate_token(account_code, client_key, secret_key='n3xusT3c#'):
@@ -34,20 +34,20 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
         </SyntaxHighlighter>
       </section>
 
-      <section id="endpoints">
-        <h2>Endpoints</h2>
-        <h3>Pay In</h3>
+      <section id="endpoints" style={{ marginBottom: '2em' }}>
+        <h2 style={{ fontSize: '2em', fontWeight: 'bold' }}>Endpoints</h2>
+        <h3 style={{ fontSize: '1.75em', fontWeight: 'bold' }}>Pay In</h3>
         <p>Endpoint: <code>https://api.nexuspay.cloud/payin/process</code></p>
         <p>Method: POST</p>
         <p>Headers:</p>
-        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
+        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2", padding: '1em' }}>
           {`{
   'Content-Type': 'application/json',
   'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
 }`}
         </SyntaxHighlighter>
         <p>Body Parameters:</p>
-        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
+        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2", padding: '1em' }}>
           {`{
   "name": "gerald",
   "email": "marcSmith@yahoo.com",
@@ -61,10 +61,10 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
         </SyntaxHighlighter>
       </section>
 
-      <section id="example-code">
-        <h2>Example Code</h2>
-        <h3>Python Example</h3>
-        <SyntaxHighlighter language="python" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
+      <section id="example-code" style={{ marginBottom: '2em' }}>
+        <h2 style={{ fontSize: '2em', fontWeight: 'bold' }}>Example Code</h2>
+        <h3 style={{ fontSize: '1.75em', fontWeight: 'bold' }}>Python Example</h3>
+        <SyntaxHighlighter language="python" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2", padding: '1em' }}>
           {`import requests
 import json
 
@@ -123,8 +123,8 @@ make_request(url, payload, headers)
         </SyntaxHighlighter>
       </section>
 
-      <section id="error-codes">
-        <h2>Error Codes</h2>
+      <section id="error-codes" style={{ marginBottom: '2em' }}>
+        <h2 style={{ fontSize: '2em', fontWeight: 'bold' }}>Error Codes</h2>
         <p>Below are some common error codes you may encounter:</p>
         <ul>
           <li>2005: Authentication Failed.</li>
@@ -142,8 +142,8 @@ make_request(url, payload, headers)
         </ul>
       </section>
 
-      <section id="statuses">
-        <h2>Statuses</h2>
+      <section id="statuses" style={{ marginBottom: '2em' }}>
+        <h2 style={{ fontSize: '2em', fontWeight: 'bold' }}>Statuses</h2>
         <ul>
           <li><strong>awaiting_redirect</strong>: Payment is waiting to be redirected</li>
           <li><strong>processing</strong>: Payment is processing</li>
@@ -152,20 +152,20 @@ make_request(url, payload, headers)
         </ul>
       </section>
 
-      <section id="payout-api">
-        <h2>Payout API</h2>
-        <h3>Endpoint</h3>
+      <section id="payout-api" style={{ marginBottom: '2em' }}>
+        <h2 style={{ fontSize: '2em', fontWeight: 'bold' }}>Payout API</h2>
+        <h3 style={{ fontSize: '1.75em', fontWeight: 'bold' }}>Endpoint</h3>
         <p>Endpoint: <code>https://api.nexuspay.cloud/payout/payout</code></p>
         <p>Method: POST</p>
         <p>Headers:</p>
-        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
+        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2", padding: '1em' }}>
           {`{
   'Content-Type': 'text/plain',
   'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
 }`}
         </SyntaxHighlighter>
         <p>Body Parameters:</p>
-        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
+        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2", padding: '1em' }}>
           {`{
   "name": "mark pogi hook2 v2",
   "email": "marcSmith@yahoo.com",
@@ -178,7 +178,7 @@ make_request(url, payload, headers)
 }`}
         </SyntaxHighlighter>
         <h3>Example CURL Command</h3>
-        <SyntaxHighlighter language="bash" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
+        <SyntaxHighlighter language="bash" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2", padding: '1em' }}>
           {`curl -X POST 'https://api.nexuspay.cloud/payout/payout' -H 'Content-Type:text/plain' -H 'Authorization:Bearer YOUR_GENERATED_TOKEN' -d '{
   "name": "mark pogi hook2 v2",
   "email": "marcSmith@yahoo.com",
