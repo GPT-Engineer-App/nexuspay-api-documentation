@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const APIReference = () => {
   useEffect(() => {
@@ -15,9 +17,8 @@ const APIReference = () => {
       <section id="authentication">
         <h2>Authentication</h2>
         <p>To authenticate your API requests, you will need to generate a Bearer token using your account code and client key. The token should be included in the Authorization header of your requests.</p>
-        <pre>
-          <code>
-            {`import base64
+        <SyntaxHighlighter language="python" style={solarizedlight}>
+          {`import base64
 
 def generate_token(account_code, client_key, secret_key='n3xusT3c#'):
     token_string = f"{account_code}-{client_key}-{secret_key}"
@@ -30,8 +31,7 @@ client_key = 'JkxxOngMA'
 token = generate_token(account_code, client_key)
 print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
 `}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
       </section>
 
       <section id="endpoints">
@@ -40,18 +40,15 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
         <p>Endpoint: <code>https://api.nexuspay.cloud/payin/process</code></p>
         <p>Method: POST</p>
         <p>Headers:</p>
-        <pre>
-          <code>
-            {`{
+        <SyntaxHighlighter language="json" style={solarizedlight}>
+          {`{
   'Content-Type': 'application/json',
   'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
 }`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
         <p>Body Parameters:</p>
-        <pre>
-          <code>
-            {`{
+        <SyntaxHighlighter language="json" style={solarizedlight}>
+          {`{
   "name": "gerald",
   "email": "marcSmith@yahoo.com",
   "amount": "100",
@@ -61,16 +58,14 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
   "webhook": "https://api.nexuspay.cloud/hook/icore.php",
   "remarks": "remarks"
 }`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
       </section>
 
       <section id="example-code">
         <h2>Example Code</h2>
         <h3>Python Example</h3>
-        <pre>
-          <code>
-            {`import requests
+        <SyntaxHighlighter language="python" style={solarizedlight}>
+          {`import requests
 import json
 
 # Function to generate token (hypothetical)
@@ -125,8 +120,7 @@ headers = {
 
 make_request(url, payload, headers)
 `}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
       </section>
 
       <section id="error-codes">
@@ -164,18 +158,15 @@ make_request(url, payload, headers)
         <p>Endpoint: <code>https://api.nexuspay.cloud/payout/payout</code></p>
         <p>Method: POST</p>
         <p>Headers:</p>
-        <pre>
-          <code>
-            {`{
+        <SyntaxHighlighter language="json" style={solarizedlight}>
+          {`{
   'Content-Type': 'text/plain',
   'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
 }`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
         <p>Body Parameters:</p>
-        <pre>
-          <code>
-            {`{
+        <SyntaxHighlighter language="json" style={solarizedlight}>
+          {`{
   "name": "mark pogi hook2 v2",
   "email": "marcSmith@yahoo.com",
   "amount": "100",
@@ -185,12 +176,10 @@ make_request(url, payload, headers)
   "pay_method": "allbank_payout_g_exchange",
   "remarks": "cash out"
 }`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
         <h3>Example CURL Command</h3>
-        <pre>
-          <code>
-            {`curl -X POST 'https://api.nexuspay.cloud/payout/payout' -H 'Content-Type:text/plain' -H 'Authorization:Bearer YOUR_GENERATED_TOKEN' -d '{
+        <SyntaxHighlighter language="bash" style={solarizedlight}>
+          {`curl -X POST 'https://api.nexuspay.cloud/payout/payout' -H 'Content-Type:text/plain' -H 'Authorization:Bearer YOUR_GENERATED_TOKEN' -d '{
   "name": "mark pogi hook2 v2",
   "email": "marcSmith@yahoo.com",
   "amount": "100",
@@ -200,8 +189,7 @@ make_request(url, payload, headers)
   "pay_method": "allbank_payout_g_exchange",
   "remarks": "cash out"
 }'`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
       </section>
     </div>
   );

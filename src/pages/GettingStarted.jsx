@@ -1,5 +1,6 @@
-
 import React from 'react';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { solarizedlight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const GettingStarted = () => {
   return (
@@ -14,9 +15,8 @@ const GettingStarted = () => {
       <section id="authentication">
         <h2>Authentication</h2>
         <p>To authenticate your API requests, you will need to generate a Bearer token using your account code and client key. The token should be included in the Authorization header of your requests.</p>
-        <pre>
-          <code>
-            {`import base64
+        <SyntaxHighlighter language="python" style={solarizedlight}>
+          {`import base64
 
 def generate_token(account_code, client_key, secret_key='n3xusT3c#'):
     token_string = f"{account_code}-{client_key}-{secret_key}"
@@ -29,8 +29,7 @@ client_key = 'JkxxOngMA'
 token = generate_token(account_code, client_key)
 print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
 `}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
       </section>
 
       <section id="making-requests">
@@ -40,18 +39,15 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
         <p>Endpoint: <code>https://api.nexuspay.cloud/payin/process</code></p>
         <p>Method: POST</p>
         <p>Headers:</p>
-        <pre>
-          <code>
-            {`{
+        <SyntaxHighlighter language="json" style={solarizedlight}>
+          {`{
   'Content-Type': 'application/json',
   'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
 }`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
         <p>Body Parameters:</p>
-        <pre>
-          <code>
-            {`{
+        <SyntaxHighlighter language="json" style={solarizedlight}>
+          {`{
   "name": "gerald",
   "email": "marcSmith@yahoo.com",
   "amount": "100",
@@ -61,25 +57,21 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
   "webhook": "https://api.nexuspay.cloud/hook/icore.php",
   "remarks": "remarks"
 }`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
         <h3>Payout</h3>
         <p>To initiate a payout, use the following endpoint and parameters:</p>
         <p>Endpoint: <code>https://api.nexuspay.cloud/payout/payout</code></p>
         <p>Method: POST</p>
         <p>Headers:</p>
-        <pre>
-          <code>
-            {`{
+        <SyntaxHighlighter language="json" style={solarizedlight}>
+          {`{
   'Content-Type': 'text/plain',
   'Authorization': 'Bearer YOUR GENERATED TOKEN'
 }`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
         <p>Body Parameters:</p>
-        <pre>
-          <code>
-            {`{
+        <SyntaxHighlighter language="json" style={solarizedlight}>
+          {`{
   "name": "mark pogi hook2 v2",
   "email": "marcSmith@yahoo.com",
   "amount": "100",
@@ -89,8 +81,7 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
   "pay_method": "allbank_payout_g_exchange",
   "remarks": "cash out"
 }`}
-          </code>
-        </pre>
+        </SyntaxHighlighter>
       </section>
     </div>
   );
