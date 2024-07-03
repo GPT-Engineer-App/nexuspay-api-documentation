@@ -17,7 +17,7 @@ const APIReference = () => {
       <section id="authentication">
         <h2>Authentication</h2>
         <p>To authenticate your API requests, you will need to generate a Bearer token using your account code and client key. The token should be included in the Authorization header of your requests.</p>
-        <SyntaxHighlighter language="python" style={solarizedlight}>
+        <SyntaxHighlighter language="python" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
           {`import base64
 
 def generate_token(account_code, client_key, secret_key='n3xusT3c#'):
@@ -40,14 +40,14 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
         <p>Endpoint: <code>https://api.nexuspay.cloud/payin/process</code></p>
         <p>Method: POST</p>
         <p>Headers:</p>
-        <SyntaxHighlighter language="json" style={solarizedlight}>
+        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
           {`{
   'Content-Type': 'application/json',
   'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
 }`}
         </SyntaxHighlighter>
         <p>Body Parameters:</p>
-        <SyntaxHighlighter language="json" style={solarizedlight}>
+        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
           {`{
   "name": "gerald",
   "email": "marcSmith@yahoo.com",
@@ -64,7 +64,7 @@ print(token)  # Bearer W6dprK2khmaaWJ5g5trryaaQjtOspcHNxqfZm9U=
       <section id="example-code">
         <h2>Example Code</h2>
         <h3>Python Example</h3>
-        <SyntaxHighlighter language="python" style={solarizedlight}>
+        <SyntaxHighlighter language="python" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
           {`import requests
 import json
 
@@ -158,14 +158,14 @@ make_request(url, payload, headers)
         <p>Endpoint: <code>https://api.nexuspay.cloud/payout/payout</code></p>
         <p>Method: POST</p>
         <p>Headers:</p>
-        <SyntaxHighlighter language="json" style={solarizedlight}>
+        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
           {`{
   'Content-Type': 'text/plain',
   'Authorization': 'Bearer YOUR_GENERATED_TOKEN'
 }`}
         </SyntaxHighlighter>
         <p>Body Parameters:</p>
-        <SyntaxHighlighter language="json" style={solarizedlight}>
+        <SyntaxHighlighter language="json" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
           {`{
   "name": "mark pogi hook2 v2",
   "email": "marcSmith@yahoo.com",
@@ -178,7 +178,7 @@ make_request(url, payload, headers)
 }`}
         </SyntaxHighlighter>
         <h3>Example CURL Command</h3>
-        <SyntaxHighlighter language="bash" style={solarizedlight}>
+        <SyntaxHighlighter language="bash" style={solarizedlight} customStyle={{ backgroundColor: "#2d2d2d", color: "#f8f8f2" }}>
           {`curl -X POST 'https://api.nexuspay.cloud/payout/payout' -H 'Content-Type:text/plain' -H 'Authorization:Bearer YOUR_GENERATED_TOKEN' -d '{
   "name": "mark pogi hook2 v2",
   "email": "marcSmith@yahoo.com",
